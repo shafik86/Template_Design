@@ -1,0 +1,49 @@
+﻿@page "/EditTemplate/{id:int}"
+@page "/AddTemplate"
+@using Template_Design.shared
+
+<h2>Add New Template</h2>
+
+<div class="col-md-6 border border-success pa-4 m-2 p-4" style="box-shadow:20%">
+    <EditForm Model="@template">
+        <div class="form-group" >
+            <label for="Name" class="mt-2">Name Design</label>
+            <input type="name" @bind-value="template.Name" class="form-control " id="Name" aria-describedby="nameHelper" placeholder="Enter Name Template">
+            <small id="nameHelper" class="form-text text-muted">Enter Your Template Name to describe your design.</small>
+        </div>
+        <div class="form-group">
+            <label for="Description">Description</label>
+            <input type="text" @bind-value="template.Description" class="form-control" id="Description" placeholder="Explain your design here..">
+        </div>
+        <div class="form-group">
+            <label for="URL">Power BI Url</label>
+            <input type="text" @bind-value="template.PbiUrl" class="form-control" id="URL" placeholder="Place your URL here.">
+        </div>
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text">Upload</span>
+            </div>
+            <div class="custom-file">
+                <input type="file" @bind-value="template.Thumb" class="custom-file-input" id="Thumbnail" placeholder="Place your sketch">
+                <label class="custom-file-label" for="Thumbnail">Choose file</label>
+            </div>
+        </div>
+       
+        
+        <button type="submit" class="btn btn-primary mb-3">Save</button>
+    </EditForm>
+</div>
+
+@code {
+    public Template template { get; set; } = new Template();
+    [Parameter]
+    public int id { get; set; } = 0;
+
+    protected override Task OnParametersSetAsync()
+    {
+        return base.OnParametersSetAsync();
+    }
+ 
+
+
+}

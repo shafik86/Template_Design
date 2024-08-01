@@ -1,0 +1,130 @@
+﻿@page "/"
+@using Template_Design.shared
+
+<PageTitle>Home</PageTitle>
+
+
+<h1>@Text1</h1>
+
+<MudPaper Elevation="2" Class="pa-4 p-2 m-2" Style="align-self:baseline;height:auto;width:98%">
+    <div class="row m-3">
+        @foreach (var design in Designs)
+        {
+            <div class="card pa-4 m-3" style="width: 15rem;">
+                <img class="card-img-top" src="@design.Thumb" alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title">@design.Name</h5>
+                    <p class="card-text">@design.Description</p>
+                    <a href="@($"TemplateView/{design.Id}")" class="btn btn-primary">View Template</a>
+                </div>
+            </div>
+        }
+
+    </div>
+</MudPaper>
+
+
+
+
+@code {
+
+    public string Text1 { get; set; } = "Design Templates";
+    public IEnumerable<Template> Designs { get; set; }
+    private int selectedDesignID;
+
+    protected override Task OnInitializedAsync()
+    {
+        Designs = new List<Template>();
+        loadTempaltes();
+        return base.OnInitializedAsync();
+    }
+    private async Task OnDesignIdSelected()
+    {
+        var x = Designs.FirstOrDefault(e => e.Id == selectedDesignID);
+        Text1 = x.Name;
+
+        StateHasChanged();
+    }
+
+    public void loadTempaltes()
+    {
+        Template D1 = new Template()
+            {
+                Id = 1,
+                Name = "Penjagaan Asset",
+                Description = "",
+                PbiUrl = "https://app.powerbi.com/view?r=eyJrIjoiMjYyOTNmOGMtNjUwZC00MDAwLWE5ODUtYjY1MDI0OGUxMjRlIiwidCI6ImM2NWIxYzYzLTdjYjctNGFlNy05YzNjLTk5OWI0ZGE1MjM5NiIsImMiOjEwfQ%3D%3D",
+                Thumb = "./images/default.jpg"
+            };
+        Template D2 = new Template()
+            {
+                Id = 2,
+                Name = "Data Rangkaian",
+                Description = "",
+                PbiUrl = "https://app.powerbi.com/view?r=eyJrIjoiMmI0YjcyZDUtZjNhYy00MGMxLWEzZDktNTkzZDE5ZDQzZDUxIiwidCI6ImM2NWIxYzYzLTdjYjctNGFlNy05YzNjLTk5OWI0ZGE1MjM5NiIsImMiOjEwfQ%3D%3D",
+                Thumb = "./images/default.jpg"
+            };
+        Template D3 = new Template()
+            {
+
+                Id = 3,
+                Name = "Road Accident",
+                Description = "",
+                PbiUrl = "https://app.powerbi.com/view?r=eyJrIjoiOTc4YmVjMGUtY2M4Ni00YTQwLWJmZTktNGQwM2I1NDE1NTZiIiwidCI6ImM2NWIxYzYzLTdjYjctNGFlNy05YzNjLTk5OWI0ZGE1MjM5NiIsImMiOjEwfQ%3D%3D",
+                Thumb = "./images/default.jpg"
+            };
+        //##################################################
+        Template D4 = new Template()
+            {
+                Id = 1,
+                Name = "Penjagaan Asset",
+                Description = "",
+                PbiUrl = "https://app.powerbi.com/view?r=eyJrIjoiMjYyOTNmOGMtNjUwZC00MDAwLWE5ODUtYjY1MDI0OGUxMjRlIiwidCI6ImM2NWIxYzYzLTdjYjctNGFlNy05YzNjLTk5OWI0ZGE1MjM5NiIsImMiOjEwfQ%3D%3D",
+                Thumb = "./images/default.jpg"
+            };
+        Template D5 = new Template()
+            {
+                Id = 2,
+                Name = "Data Rangkaian",
+                Description = "",
+                PbiUrl = "https://app.powerbi.com/view?r=eyJrIjoiMmI0YjcyZDUtZjNhYy00MGMxLWEzZDktNTkzZDE5ZDQzZDUxIiwidCI6ImM2NWIxYzYzLTdjYjctNGFlNy05YzNjLTk5OWI0ZGE1MjM5NiIsImMiOjEwfQ%3D%3D",
+                Thumb = "./images/default.jpg"
+            };
+        Template D6 = new Template()
+            {
+
+                Id = 3,
+                Name = "Road Accident",
+                Description = "",
+                PbiUrl = "https://app.powerbi.com/view?r=eyJrIjoiOTc4YmVjMGUtY2M4Ni00YTQwLWJmZTktNGQwM2I1NDE1NTZiIiwidCI6ImM2NWIxYzYzLTdjYjctNGFlNy05YzNjLTk5OWI0ZGE1MjM5NiIsImMiOjEwfQ%3D%3D",
+                Thumb = "./images/default.jpg"
+            };
+        Template D7 = new Template()
+            {
+                Id = 1,
+                Name = "Penjagaan Asset",
+                Description = "",
+                PbiUrl = "https://app.powerbi.com/view?r=eyJrIjoiMjYyOTNmOGMtNjUwZC00MDAwLWE5ODUtYjY1MDI0OGUxMjRlIiwidCI6ImM2NWIxYzYzLTdjYjctNGFlNy05YzNjLTk5OWI0ZGE1MjM5NiIsImMiOjEwfQ%3D%3D",
+                Thumb = "./images/default.jpg"
+            };
+        Template D8 = new Template()
+            {
+                Id = 2,
+                Name = "Data Rangkaian",
+                Description = "",
+                PbiUrl = "https://app.powerbi.com/view?r=eyJrIjoiMmI0YjcyZDUtZjNhYy00MGMxLWEzZDktNTkzZDE5ZDQzZDUxIiwidCI6ImM2NWIxYzYzLTdjYjctNGFlNy05YzNjLTk5OWI0ZGE1MjM5NiIsImMiOjEwfQ%3D%3D",
+                Thumb = "./images/default.jpg"
+            };
+        Template D9 = new Template()
+            {
+
+                Id = 3,
+                Name = "Road Accident",
+                Description = "",
+                PbiUrl = "https://app.powerbi.com/view?r=eyJrIjoiOTc4YmVjMGUtY2M4Ni00YTQwLWJmZTktNGQwM2I1NDE1NTZiIiwidCI6ImM2NWIxYzYzLTdjYjctNGFlNy05YzNjLTk5OWI0ZGE1MjM5NiIsImMiOjEwfQ%3D%3D",
+                Thumb = "./images/default.jpg"
+            };
+        Designs = new List<Template> { D1, D2, D3 };
+    }
+
+}

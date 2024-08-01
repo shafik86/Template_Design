@@ -1,0 +1,68 @@
+﻿@page "/TemplateView/{id:int}"
+@using Template_Design.shared
+
+<h2>Templates @title</h2>
+
+@if (id != 0 || id > 0)
+{
+    <MudContainer Class="container-fluid w-100 h-75">
+        <CascadingValue Value="@SrcUrl">
+            <PbiFrame></PbiFrame>
+        </CascadingValue>
+    </MudContainer>
+}
+else
+{
+    <p>Loading ...</p>
+}
+
+@code {
+    public string SrcUrl { get; set; } = "https://app.powerbi.com/view?r=eyJrIjoiMmI0YjcyZDUtZjNhYy00MGMxLWEzZDktNTkzZDE5ZDQzZDUxIiwidCI6ImM2NWIxYzYzLTdjYjctNGFlNy05YzNjLTk5OWI0ZGE1MjM5NiIsImMiOjEwfQ%3D%3D";
+    public IEnumerable<Template> Designs { get; set; }
+    public Template Design { get; set; }
+    public string title { get; set; } = "";
+    [Parameter]
+    public int id { get; set; } = 0;
+
+    protected override Task OnParametersSetAsync()
+    {
+        loadTempaltes();
+        if (id != 0)
+        {
+            Design = Designs.FirstOrDefault(e => e.Id == id);
+            SrcUrl = Design.PbiUrl;
+            title = Design.Name;
+        }
+        return base.OnParametersSetAsync();
+    }
+
+    public void loadTempaltes()
+    {
+        Template D1 = new Template()
+            {
+                Id = 1,
+                Name = "Penjagaan Asset",
+                Description = "",
+                PbiUrl = "https://app.powerbi.com/view?r=eyJrIjoiMjYyOTNmOGMtNjUwZC00MDAwLWE5ODUtYjY1MDI0OGUxMjRlIiwidCI6ImM2NWIxYzYzLTdjYjctNGFlNy05YzNjLTk5OWI0ZGE1MjM5NiIsImMiOjEwfQ%3D%3D",
+                Thumb = "images/Thumbs/default.jpg"
+            };
+        Template D2 = new Template()
+            {
+                Id = 2,
+                Name = "Data Rangkaian",
+                Description = "",
+                PbiUrl = "https://app.powerbi.com/view?r=eyJrIjoiMmI0YjcyZDUtZjNhYy00MGMxLWEzZDktNTkzZDE5ZDQzZDUxIiwidCI6ImM2NWIxYzYzLTdjYjctNGFlNy05YzNjLTk5OWI0ZGE1MjM5NiIsImMiOjEwfQ%3D%3D",
+                Thumb = "images/Thumbs/default.jpg"
+            };
+        Template D3 = new Template()
+            {
+
+                Id = 3,
+                Name = "Road Accident",
+                Description = "",
+                PbiUrl = "https://app.powerbi.com/view?r=eyJrIjoiOTc4YmVjMGUtY2M4Ni00YTQwLWJmZTktNGQwM2I1NDE1NTZiIiwidCI6ImM2NWIxYzYzLTdjYjctNGFlNy05YzNjLTk5OWI0ZGE1MjM5NiIsImMiOjEwfQ%3D%3D",
+                Thumb = "images/Thumbs/default.jpg"
+            };
+        Designs = new List<Template> { D1, D2, D3 };
+    }
+}
