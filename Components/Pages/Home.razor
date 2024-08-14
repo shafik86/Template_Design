@@ -13,9 +13,16 @@
             <div class="card pa-4 m-3" style="width: 15rem;">
                 <img class="card-img-top" src="@design.Thumb" alt="Card image cap">
                 <div class="card-body">
-                    <h5 class="card-title">@design.Name</h5>
-                    <p class="card-text">@design.Description</p>
-                    <a href="@($"TemplateView/{design.Id}")" class="btn btn-primary">View Template</a>
+                    <h5 class="card-title text-primary"><b>@design.Name</b></h5>
+                    <h6 class="card-text text-warning mb-2">@design.Description</h6>
+                    <div class="row inline">
+                        <div class="col-6">
+                            <a href="@($"TemplateView/{design.Id}")" class="btn btn-primary btn-sm mt-2 " style="float:left;">View</a>
+                        </div>
+                        <div class="col-6">
+                            <a href="@($"TemplateView/{design.Id}")" class="btn btn-success btn-sm mt-2 " style="float:right;">Buy</a>
+                        </div>
+                    </div>
                 </div>
             </div>
         }
@@ -52,7 +59,7 @@
             {
                 Id = 1,
                 Name = "Penjagaan Asset",
-                Description = "",
+                Description = "Reka bentuk ini menunjukkan prestasi dan data untuk Asset",
                 PbiUrl = "https://app.powerbi.com/view?r=eyJrIjoiMjYyOTNmOGMtNjUwZC00MDAwLWE5ODUtYjY1MDI0OGUxMjRlIiwidCI6ImM2NWIxYzYzLTdjYjctNGFlNy05YzNjLTk5OWI0ZGE1MjM5NiIsImMiOjEwfQ%3D%3D",
                 Thumb = "./images/default.jpg"
             };
@@ -60,7 +67,7 @@
             {
                 Id = 2,
                 Name = "Data Rangkaian",
-                Description = "",
+                Description = "Reka Bentuk ini menunjukkan Data dan prestasi Data Rangkaian",
                 PbiUrl = "https://app.powerbi.com/view?r=eyJrIjoiMmI0YjcyZDUtZjNhYy00MGMxLWEzZDktNTkzZDE5ZDQzZDUxIiwidCI6ImM2NWIxYzYzLTdjYjctNGFlNy05YzNjLTk5OWI0ZGE1MjM5NiIsImMiOjEwfQ%3D%3D",
                 Thumb = "./images/default.jpg"
             };
@@ -69,62 +76,62 @@
 
                 Id = 3,
                 Name = "Road Accident",
-                Description = "",
+                Description = "Reka Bentuk ini menunjukkan Kadar berlakunya kemalangan dan juga kematian",
                 PbiUrl = "https://app.powerbi.com/view?r=eyJrIjoiOTc4YmVjMGUtY2M4Ni00YTQwLWJmZTktNGQwM2I1NDE1NTZiIiwidCI6ImM2NWIxYzYzLTdjYjctNGFlNy05YzNjLTk5OWI0ZGE1MjM5NiIsImMiOjEwfQ%3D%3D",
                 Thumb = "./images/default.jpg"
             };
         //##################################################
         Template D4 = new Template()
             {
-                Id = 1,
+                Id = 4,
                 Name = "Penjagaan Asset",
-                Description = "",
+                Description = "Reka bentuk ini menunjukkan prestasi dan data untuk Asset",
                 PbiUrl = "https://app.powerbi.com/view?r=eyJrIjoiMjYyOTNmOGMtNjUwZC00MDAwLWE5ODUtYjY1MDI0OGUxMjRlIiwidCI6ImM2NWIxYzYzLTdjYjctNGFlNy05YzNjLTk5OWI0ZGE1MjM5NiIsImMiOjEwfQ%3D%3D",
                 Thumb = "./images/default.jpg"
             };
         Template D5 = new Template()
             {
-                Id = 2,
+                Id = 5,
                 Name = "Data Rangkaian",
-                Description = "",
+                Description = "Reka Bentuk ini menunjukkan Data dan prestasi Data Rangkaian",
                 PbiUrl = "https://app.powerbi.com/view?r=eyJrIjoiMmI0YjcyZDUtZjNhYy00MGMxLWEzZDktNTkzZDE5ZDQzZDUxIiwidCI6ImM2NWIxYzYzLTdjYjctNGFlNy05YzNjLTk5OWI0ZGE1MjM5NiIsImMiOjEwfQ%3D%3D",
                 Thumb = "./images/default.jpg"
             };
         Template D6 = new Template()
             {
 
-                Id = 3,
+                Id = 6,
                 Name = "Road Accident",
-                Description = "",
+                Description = "Reka Bentuk ini menunjukkan Kadar berlakunya kemalangan dan juga kematian",
                 PbiUrl = "https://app.powerbi.com/view?r=eyJrIjoiOTc4YmVjMGUtY2M4Ni00YTQwLWJmZTktNGQwM2I1NDE1NTZiIiwidCI6ImM2NWIxYzYzLTdjYjctNGFlNy05YzNjLTk5OWI0ZGE1MjM5NiIsImMiOjEwfQ%3D%3D",
                 Thumb = "./images/default.jpg"
             };
         Template D7 = new Template()
             {
-                Id = 1,
+                Id = 7,
                 Name = "Penjagaan Asset",
-                Description = "",
+                Description = "Reka bentuk ini menunjukkan prestasi dan data untuk Asset",
                 PbiUrl = "https://app.powerbi.com/view?r=eyJrIjoiMjYyOTNmOGMtNjUwZC00MDAwLWE5ODUtYjY1MDI0OGUxMjRlIiwidCI6ImM2NWIxYzYzLTdjYjctNGFlNy05YzNjLTk5OWI0ZGE1MjM5NiIsImMiOjEwfQ%3D%3D",
                 Thumb = "./images/default.jpg"
             };
         Template D8 = new Template()
             {
-                Id = 2,
+                Id = 8,
                 Name = "Data Rangkaian",
-                Description = "",
+                Description = "Reka Bentuk ini menunjukkan Data dan prestasi Data Rangkaian",
                 PbiUrl = "https://app.powerbi.com/view?r=eyJrIjoiMmI0YjcyZDUtZjNhYy00MGMxLWEzZDktNTkzZDE5ZDQzZDUxIiwidCI6ImM2NWIxYzYzLTdjYjctNGFlNy05YzNjLTk5OWI0ZGE1MjM5NiIsImMiOjEwfQ%3D%3D",
                 Thumb = "./images/default.jpg"
             };
         Template D9 = new Template()
             {
 
-                Id = 3,
+                Id = 9,
                 Name = "Road Accident",
-                Description = "",
+                Description = "Reka Bentuk ini menunjukkan Kadar berlakunya kemalangan dan juga kematian",
                 PbiUrl = "https://app.powerbi.com/view?r=eyJrIjoiOTc4YmVjMGUtY2M4Ni00YTQwLWJmZTktNGQwM2I1NDE1NTZiIiwidCI6ImM2NWIxYzYzLTdjYjctNGFlNy05YzNjLTk5OWI0ZGE1MjM5NiIsImMiOjEwfQ%3D%3D",
                 Thumb = "./images/default.jpg"
             };
-        Designs = new List<Template> { D1, D2, D3 };
+        Designs = new List<Template> { D1, D2, D3, D4, D5, D6, D7, D8, D9 };
     }
 
 }
