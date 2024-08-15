@@ -2,6 +2,7 @@ using Microsoft.EntityFrameworkCore;
 using MudBlazor.Services;
 using Template_Design.Components;
 using Template_Design.Models;
+using Template_Design.Models.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -15,6 +16,8 @@ var connectionString = builder.Configuration.GetConnectionString("DBConnection")
 builder.Services.AddDbContext<AppDbContext>(options =>
 options.UseSqlServer(connectionString));
 
+builder.Services.AddScoped<ITemplateService, TemplateService>();
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -26,7 +29,7 @@ if (!app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
-
+app.MapControllers();
 app.UseStaticFiles();
 app.UseAntiforgery();
 
