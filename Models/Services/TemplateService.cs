@@ -40,6 +40,8 @@ namespace Template_Design.Models.Services
                 }
             }
 
+            return null;
+
         }
 
         public async Task<IEnumerable<Template>> GetTemplates()
